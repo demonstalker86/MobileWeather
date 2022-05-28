@@ -23,7 +23,7 @@ class TestApp(App):
          #print('User pressed enter in', self, value.text)
          config_dict = get_default_config()
          config_dict['language'] = 'ru'
-         owm=pyowm.OWM('d377fd3354ceb559dced71598b33675c', config_dict)
+         owm=pyowm.OWM('API key', config_dict)
          mgr = owm.weather_manager()
          message_text = self.textinput1.text
          observation = mgr.weather_at_place(message_text)
@@ -38,7 +38,7 @@ class TestApp(App):
     def build(self):
         config_dict = get_default_config()
         config_dict['language'] = 'ru'
-        owm=pyowm.OWM('d377fd3354ceb559dced71598b33675c', config_dict)
+        owm=pyowm.OWM('Api key', config_dict)
         mgr = owm.weather_manager()
         message_text = "Тверь"
         observation = mgr.weather_at_place(message_text)
